@@ -1,0 +1,26 @@
+<!-- THIS IS THE MAIN CONTENT OF THE ORDER DETAIL -->
+<div [hidden]="showAllProducts" *ngIf="!sendMessage">
+  <h2>Order Detail</h2>
+  <p>Here you can find the information of your order:</p>
+
+  <div class="card-container" *ngIf="changedOrder&&all_products">
+    <app-item *ngFor="let i of changedOrder['items']" [item]="i" (itemChange)="itemChange($event)"></app-item>
+  </div>
+  <div>
+    <p>TOTAL PRICE OF ORDER:</p>
+    <p>€ {{changedOrder?.total}}</p>
+  </div>
+  <div>
+    <button (click)="openProductOverview()">Add item</button>
+  </div>
+  <div>
+    <button (click)="sendOrder()">Send Order</button>
+    <button (click)="undoUserChanges()">Undo Changes</button>
+  </div>
+</div>
+
+<app-success-window *ngIf="sendMessage" [message]="sendMessage">
+</app-success-window>
+
+<app-add-window *ngIf="showAllProducts==true" [(view_add_window)]="showAllProducts" [changedOrder]="changedOrder"
+  (orderChange)="orderChange($event)" [products]="all_products"></app-add-window>

@@ -1,0 +1,10 @@
+<div class="card-container" *ngIf="products&&view_add_window">
+  <h2>Product Overview</h2>
+  <h3>Add a new item to your current order</h3>
+  <p>Add a new item to your current order</p>
+  <app-item *ngFor="let p of products" [product]="p" (productChange)="productChange($event)"></app-item>
+  <div>
+    <button (click)="addItems()">Add Items To Order</button>
+    <button (click)="cancel()">Cancel</button>
+  </div>
+</div>

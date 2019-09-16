@@ -1,0 +1,16 @@
+<p>
+    <span>{{prod_id}}: </span>
+    <span>{{description}}</span>
+</p>
+<p>
+    <button (click)="lowerQuantity()">-</button>
+    <span>
+        <input type="text" [(value)]="quantity" (keyup)="changeQuantity($event.target.value)">
+    </span>
+    <button (click)="addQuantity()">+</button>
+    <span>  € {{price}}</span>
+</p>
+<p>€ {{total}}</p>
+
+<button *ngIf="item" (click)="deleteItem()">Delete item</button>
+<hr>
