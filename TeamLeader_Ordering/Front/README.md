@@ -2,9 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
 
+## Back end server
+Run `npm start` in Back file to start the back end server on port 3000.
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` in Front file for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## --------------------
 
 ## Code scaffolding
 
